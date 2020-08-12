@@ -13,7 +13,8 @@ class Graph:
 
     #---- ADD VERTEX ----#
     def add_vertex(self, vertex_id):                            # in the vertices dictionary, add that vertex to the set
-        self.vertices[vertex_id] = set()
+        if vertex_id not in self.vertices:
+            self.vertices[vertex_id] = set()
 
     #---- ADD EDGE ----#
     def add_edge(self, v1, v2):                                 # in the vertices dictionary, if vertex 1 (vertex_id) is in the dictionary, add the second vertex to vertex 1's set
